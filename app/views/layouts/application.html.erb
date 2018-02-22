@@ -20,6 +20,8 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
+        <a class="navbar-brand" href="<%= user_session_path %>"/>Sign In</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -33,6 +35,13 @@
     <div class="container"  role="main">
       <%= yield %>
     </div>
+
+
+
+    <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+    <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+    <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+
 
   </body>
 </html>
